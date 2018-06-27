@@ -1,8 +1,8 @@
 <?php
 
-class constants
+class Constants
 {
-    public function reverse_array($arr)
+    public static function reverse_array($arr)
     {
         $reverted_arr = array();
         foreach ($arr as $ind => $val_arr) {
@@ -12,7 +12,7 @@ class constants
         return $reverted_arr;
     }
 
-    public function getMsgTypeList()
+    public static function getMsgTypeList()
     {
         $msgtype_list = array();
         $msgtype_list["0"] = array( gettext("INFO"),"0","msg_info");
@@ -23,7 +23,7 @@ class constants
         return $msgtype_list;
     }
 
-    public function getLanguagesList()
+    public static function getLanguagesList()
     {
         $language_list = array();
         $language_list["0"] = array( gettext("ENGLISH"), "en");
@@ -35,12 +35,12 @@ class constants
         return $language_list;
     }
 
-    public function getLanguagesRevertList()
+    public static function getLanguagesRevertList()
     {
         return Constants::reverse_array(Constants::getLanguagesList());
     }
 
-    public function getLanguages()
+    public static function getLanguages()
     {
         $language_list = array();
         $language_list["en"] = array( gettext("ENGLISH"));
@@ -52,7 +52,7 @@ class constants
         return $language_list;
     }
 
-    public function getRestrictionList()
+    public static function getRestrictionList()
     {
         $restriction_list = array();
         $restriction_list["0"] = array( gettext("NONE RESTRICTION USED"), "0");
@@ -61,7 +61,7 @@ class constants
 
         return $restriction_list;
     }
-    public function getComponentUserTypeList()
+    public static function getComponentUserTypeList()
     {
         $usertype_list = array();
         $usertype_list["0"] = array( gettext("CUSTOMERS"), "0");
@@ -71,7 +71,7 @@ class constants
         return $usertype_list;
     }
 
-    public function getYesNoList()
+    public static function getYesNoList()
     {
         $yesno = array();
         $yesno["1"] = array( gettext("Yes"), "1");
@@ -80,7 +80,7 @@ class constants
         return $yesno;
     }
 
-    public function getCallbackStatusList()
+    public static function getCallbackStatusList()
     {
         $status_list = array();
         $status_list["PENDING"] = array( gettext("PENDING"), "PENDING");
@@ -90,7 +90,7 @@ class constants
         return $status_list;
     }
 
-    public function getPeriodsList()
+    public static function getPeriodsList()
     {
         $period_list = array();
         $period_list["1"]  = array( "Hourly", "1");
@@ -101,7 +101,7 @@ class constants
         return $period_list;
     }
 
-    public function getActivationList()
+    public static function getActivationList()
     {
         $actived_list = array();
         $actived_list["0"] = array( gettext("Inactive"), "0");
@@ -110,14 +110,12 @@ class constants
         return $actived_list;
     }
 
-    public function getActivation_Revert_List()
+    public static function getActivation_Revert_List()
     {
-            $cnts = new Constants();
-
-        return $cnts->reverse_array(Constants::getActivationList());
+        return Constants::reverse_array(Constants::getActivationList());
     }
 
-    public function getActivationTrueFalseList()
+    public static function getActivationTrueFalseList()
     {
         $actived_list = array();
         $actived_list["t"] = array( "Active", "t");
@@ -128,9 +126,7 @@ class constants
 
     public static function getActivationTrueFalse_Revert_List()
     {
-        $cnts = new Constants();
-
-        return $cnts->reverse_array(Constants::getActivationTrueFalseList());
+        return Constants::reverse_array(Constants::getActivationTrueFalseList());
     }
 
     public static function getBillingTypeList()
@@ -175,9 +171,7 @@ class constants
 
     public static function getPaidTypeList_Revert_List()
     {
-        $cnts = new Constants();
-
-        return $cnts->reverse_array($cnts->getPaidTypeList());
+        return Constants::reverse_array($cnts->getPaidTypeList());
     }
 
     public static function getExpirationList()
@@ -202,9 +196,7 @@ class constants
 
     public static function getInvoiceStatusList_Revert_List()
     {
-        $cnts = new Constants();
-
-        return $cnts->reverse_array(Constants::getInvoiceStatusList());
+        return Constants::reverse_array(Constants::getInvoiceStatusList());
     }
 
     public static function getBillingInvoiceStatusList()
@@ -228,9 +220,7 @@ class constants
 
     public static function getInvoicePaidStatusList_Revert_List()
     {
-        $cnts = new Constants();
-
-        return $cnts->reverse_array(Constants::getInvoicePaidStatusList());
+        return Constants::reverse_array(Constants::getInvoicePaidStatusList());
     }
 
     public static function getSubscriptionPaidStatusList()
@@ -363,9 +353,7 @@ class constants
 
     public static function getUsed_revert_List()
     {
-        $cnts = new Constants();
-
-        return $cnts->reverse_array(Constants::getUsedList());
+        return Constants::reverse_array(Constants::getUsedList());
     }
 
     public static function getDialStatusList()
@@ -418,8 +406,7 @@ class constants
 
     public static function getCardStatus_Revert_List()
     {
-        $cnts=new Constants();
-        return $cnts->reverse_array(Constants::getCardStatus_List());
+        return Constants::reverse_array(Constants::getCardStatus_List());
     }
 
     public static function getCardStatus_Acronym_List()
@@ -472,9 +459,7 @@ class constants
 
     public static function getCardAccess_Revert_List()
     {
-        $cnts= new Constants();
-
-        return $cnts->reverse_array(Constants::getCardAccess_List());
+        return Constants::reverse_array(Constants::getCardAccess_List());
     }
 
     public static function getCardExpire_List()
