@@ -171,7 +171,7 @@ class Constants
 
     public static function getPaidTypeList_Revert_List()
     {
-        return Constants::reverse_array($cnts->getPaidTypeList());
+        return Constants::reverse_array(Constants::getPaidTypeList());
     }
 
     public static function getExpirationList()
